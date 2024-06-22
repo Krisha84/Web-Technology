@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=new Array();
+
+        n=parseInt(prompt("Enter the length of array : "));
+
+        for(let i=0;i<n;i++){
+            arr[i]=parseInt(prompt("Enter an element into array["+i+"] : "));
+        }
+        
+        document.write(arr+"<br/>");
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                if(arr[j]>arr[i]){
+                    temp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=temp;
+                }
+            }
+
+        }
+        document.write("-------<br/>");
+        for(i=0;i<n;i++){
+                document.write("arr["+i+"]="+arr[i]+"<br/>");
+        } 
+    </script>
+</body>
+</html>
