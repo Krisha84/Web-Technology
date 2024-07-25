@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5];
+
+        arr.push(6, 7, 8);
+        console.log("Push : ", arr);
+
+        let element = arr.pop();
+        console.log("Pop : Removed element is ", element);
+        console.log("Remaining array is ", arr);
+
+        element = arr.shift();
+        console.log("Shift : Removed element is ", element); 
+        console.log("Remaining array is ", arr);
+
+        arr.unshift(0, -1);
+        console.log("Unshift : ", arr);
+
+        arr.splice(2, 1, "a", "b");
+        console.log("Splice : ", arr);
+
+        arr.sort();
+        console.log("Sort : ", arr); 
+
+        arr.reverse();
+        console.log("Reverse : ", arr); 
+
+        let index = arr.indexOf("a");
+        console.log("IndexOf : Index of 'a' is ", index); 
+
+    </script>
+</body>
+</html>

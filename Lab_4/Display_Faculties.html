@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let faculties = [
+            {
+                fname: 'Arjun',
+                lname: 'Bala',
+                subject: 'Web Technology' 
+            },
+            {
+                fname: 'Dixita',
+                lname:'Kagathara',
+                subject: 'DMBS'   
+            },
+            {
+                fname: 'Shruti',
+                lname:'Maniar',
+                subject: 'Data Structure'   
+            },
+            {
+                fname: 'Pradyuman',
+                lname: 'Jadeja',
+                subject: 'Data Structure'   
+            },
+        ]
+        
+        document.write("<table border=1");
+        document.write("<th>"+''+"</th>");
+        document.write("<th>"+'First_Name'+"</th>");
+        document.write("<th>"+'Last_Name'+"</th>");
+        document.write("<th>"+'Subject'+"</th>");
+
+        for(i=0;i<faculties.length;i++){
+            document.write("<tr>");
+                document.write("<td>"+faculties[i].fname+"</td>");
+                document.write("<td>"+faculties[i].lname+"</td>");
+                document.write("<td>"+faculties[i].subject+"</td>");
+            document.write("</tr>");    
+        }
+        document.write("</table");
+
+    </script>
+</body>
+</html>
