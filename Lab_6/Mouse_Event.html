@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse_Event_Recognizer</title>
+</head>
+<body>
+    <button id="btn">Click_Here</button>
+
+    <script>
+        
+        document.getElementById('btn').addEventListener('click',()=>{
+            console.log("Mouse_Clicked");
+        });
+
+        document.getElementById('btn').addEventListener('dblclick',()=>{
+            console.log("Mouse_Double_Clicked");
+        });
+
+        document.getElementById('btn').addEventListener('mousedown',()=>{
+            console.log("Mouse_Down");
+        });
+
+        document.getElementById('btn').addEventListener('mouseup',()=>{
+            console.log("Mouse_Up");
+        });
+
+        document.getElementById('btn').addEventListener('mousemove',()=>{
+            console.log("Mouse_Move");
+        });
+
+        document.getElementById('btn').addEventListener('mouseout',()=>{
+            console.log("Mouse_Out");
+        });
+
+        document.getElementById('btn').addEventListener('mouseover',()=>{
+            console.log("Mouse_Over");
+        });
+
+    </script>
+</body>
+</html>

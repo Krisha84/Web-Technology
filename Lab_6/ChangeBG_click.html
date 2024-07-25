@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change_BG_Color_OnClick</title>
+</head>
+<body  id="btn">
+    <button onclick="ChangeBG()">Change_BG_Color...</button>
+    <script>
+        function ChangeBG(){
+            r = Math.floor(Math.random()*255)
+            g = Math.floor(Math.random()*255)
+            b = Math.floor(Math.random()*255)
+
+            document.getElementById('btn').style.background="rgb("+r+","+g+","+b+")";
+        }
+    </script>
+</body>
+</html>
