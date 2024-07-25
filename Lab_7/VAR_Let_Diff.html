@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=10;
+        console.log("A Outside : "+a);
+        abc();
+
+        function abc(){
+            var a=20;
+            console.log("A Inside Function : "+a);
+
+            if(true){
+                let a=30;
+                console.log("A Inside Block : "+a);
+            }
+        }
+
+        console.log("------");
+
+        b=11;
+        console.log("B Outside : "+b);
+        xyz();
+
+        function xyz(){
+            var b=22;
+            if(true){
+                b=33;
+                console.log("B Inside Block : "+b);
+            }
+            console.log("B Inside Function : "+b);     
+        }
+
+        console.log("------");
+
+        k=11;
+        console.log("K Outside : "+k);
+        pqr();
+
+        function pqr(){
+            k=22;
+            if(true){
+                let k=33;
+                console.log("K Inside Block : "+k);
+            }
+            console.log("K Inside Function : "+k);     
+        }
+
+        // only a Global_Scope
+        // var a Function_Scope
+        // let a Block_Level_scope
+
+    </script>
+</body>
+</html>
