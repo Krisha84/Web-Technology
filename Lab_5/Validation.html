@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    Enter Enrollment No : <input type="text" id="txtID" placeholder="Enter the enrollment no"/><br/><br/>
+    Enter UserName : <input type="text" id="uname" placeholder="Enter the name" /><br/><br/>
+    Enter Password : <input type="password" id="pword" placeholder="Enter the Password"/><br/><br/>
+    Confirm Password : <input type="text" id="cpword" placeholder="Confirm the Password"/><br/><br/>
+	Enter Age : <input type="date" id="txtAge" placeholder="Enter the age"/><br/><br/>
+    Enter Email : <input type="text" id="textEmail" placeholder="Enter the email id"/><br/><br/>
+    <button onclick="validateForm()" style="background-color: darkcyan; color: whitesmoke; border-color: darkcyan;">Submit</button>
+
+    <script>
+        function validateForm(){
+            let name = document.getElementById('uname').value;
+
+            if(name.length<8){
+                alert('Plss Enter valid User_Name !!');
+                // Swal.fire({
+                //     title: "Username?",
+                //     text: "Invalid User_Name !!",
+                //     icon: "question"
+                // });
+            }
+
+            let pass = document.getElementById('pword').value;
+            let pattern = /^(?=.*[0-9])(?=.*[!@#$])[A-Za-z\d!@#$]{8,12}$/;
+            let regEx = new RegExp(pattern);
+
+            if(regEx.test(pword)){
+                alert('Niceee___Valid Password !!');
+            }
+            else{
+                alert('Ooops___Invalid Password !!');
+            }
+
+            let enRoll = document.getElementById('txtID').value;
+
+            if(enRoll.length!=11){
+                alert('Plss Enter Enrollment_No of atleast 11 length !!');
+            }
+
+            let confimPassword = document.getElementById('cpword').value;
+
+            if(confimPassword!=pass){
+                alert('Plss Confirm the Password !!');
+            }
+
+            let mail = document.getElementById('textEmail').value;
+            let pattern1 = /[a-zA-Z0-9]@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+            let regEx1 = new RegExp(pattern1);
+
+            if(regEx1.test(textEmail)){
+                alert('Yeahhh....Valid Email !!');
+            }
+            else{
+                alert('Ooops....Invalid Email !!');
+            }
+
+            let Age = document.getElementById('txtAge').value;
+
+            const birthDate = new Date(dob);
+            const age = new Date().getFullYear() - birthDate.getFullYear();
+            const monthDifference = new Date().getMonth() - birthDate.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && new Date().getDate() < birthDate.getDate())) {
+                age--;
+            }
+            if (age < 18) {
+                alert('Oops !! Age must be greater than 18...');
+            }
+        }
+    </script>
+
+</body>
+</html>

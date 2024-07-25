@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Graphical Calculator</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+        }
+        .calculator{
+            align-content : center;
+            width: 266px;
+            height: 340px;
+            border: 1px solid hwb(0 80% 20%);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: darkcyan;
+        }
+
+        .display{
+            width: 91.5%;
+            height: 57px;
+            font-size: 24px;
+            padding: 10px;
+            border: none;
+            border-color: hwb(0 80% 20%);
+            background-color: whitesmoke;
+            border-radius: 10px;
+            text-align: right;
+            color:darkcyan;
+        }
+
+        .button{
+            margin-top:11px;
+            width: 22%;
+            height: 40px;
+            font-size: 20px;
+            padding: 10px;
+            margin: 2px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 10px;
+            background-color: whitesmoke;
+            border-color: darkcyan;
+            color: darkcyan;
+            /* cursor: pointer; */
+        }
+
+        .button:hover{
+            background-color:darkcyan;
+            color: whitesmoke;
+            border:1px solid whitesmoke;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="answer" style="margin-top: 4px;">
+            <input type="text" id="display" class="display" readonly>
+        </div>
+
+        <div class="button-row"  style="margin-top: 7px;">
+            <button class="button" onclick="clearDisplay()">AC</button>
+            <button class="button" onclick="performOperation('^')">^</button>
+            <button class="button" onclick="performOperation('%')">%</button>
+            <button class="button" onclick="performOperation('/')">/</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button" onclick="appendDigit(7)">7</button>
+            <button class="button" onclick="appendDigit(8)">8</button>
+            <button class="button" onclick="appendDigit(9)">9</button>
+            <button class="button" onclick="performOperation('+')">+</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button" onclick="appendDigit(4)">4</button>
+            <button class="button" onclick="appendDigit(5)">5</button>
+            <button class="button" onclick="appendDigit(6)">6</button>
+            <button class="button" onclick="performOperation('*')">x</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button" onclick="appendDigit(1)">1</button>
+            <button class="button" onclick="appendDigit(2)">2</button>
+            <button class="button" onclick="appendDigit(3)">3</button>
+            <button class="button" onclick="performOperation('-')">-</button>
+        </div>
+
+        <div class="button-row">
+            <button class="button" onclick="appendDigit('00')">00</button>
+            <button class="button" onclick="appendDigit(0)">0</button>
+            <button class="button" onclick="appendDigit('.')">.</button>
+            <button class="button" onclick="calculate()" style="background-color: darkcyan; color: whitesmoke; border: 1px solid whitesmoke;">=</button>
+        </div>
+    </div>
+
+    <script>
+
+        let display = document.getElementById("display");
+        let currentNumber = "";
+        let previousNumber = "";
+        let operation = "";
+
+        function appendDigit(digit){
+            currentNumber += digit;
+            display.value = currentNumber;
+        }
+
+        function performOperation(op){
+            previousNumber = currentNumber;
+            currentNumber = "";
+            operation = op;
+            display.value = previousNumber + " " + operation;
+        }
+
+        function calculate(){
+            let result = 0;
+
+            switch(operation){
+                case "+":
+                    result = parseFloat(previousNumber) + parseFloat(currentNumber);
+                    break;
+                case "-":
+                    result = parseFloat(previousNumber) - parseFloat(currentNumber);
+                    break;
+                case "*":
+                    result = parseFloat(previousNumber) * parseFloat(currentNumber);
+                    break;
+                case "/":
+                    result = parseFloat(previousNumber) / parseFloat(currentNumber);
+                    break;
+                case "%":
+                    result = parseFloat(previousNumber) % parseFloat(currentNumber);
+                    break;
+                case "^":
+                    result = Math.pow(previousNumber,currentNumber);
+                    break;
+            }
+
+            display.value = result;
+            currentNumber = result;
+            previousNumber = "";
+            operation = "";
+
+        }
+
+        function clearDisplay(){
+            display.value = "";
+            currentNumber = "";
+            previousNumber = "";
+            operation = "";
+        }
+
+    </script>
+</body>
+</html>
