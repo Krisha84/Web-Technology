@@ -1,0 +1,132 @@
+.about-container {
+    background: rgba(255, 255, 255, 0.8); 
+    color: #003366;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.about-container h1 {
+    font-size: 36px;
+    color: #5A83B0;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slideIn 1s ease-out;
+}
+
+.about-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #4D6B82;
+    text-align: justify;
+    transition: color 0.3s ease;
+}
+
+.about-container strong {
+    color: #6699CC;
+}
+
+.about {
+    float: right;
+    font-style: italic;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background: linear-gradient(135deg, #c0d2f2, #70a4c5);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bubble {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(47, 77, 146, 0.3);
+    border-radius: 50%;
+    animation: float 10s linear infinite;
+    bottom: -60px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-100vh) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.bubble:nth-child(1) {
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 15s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(2) {
+    left: 30%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 18s;
+    animation-delay: 5s;
+}
+
+.bubble:nth-child(3) {
+    left: 60%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+    left: 80%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 20s;
+    animation-delay: 4s;
+}
+
+.about-container a {
+    color: #4776a9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-container a:hover {
+    color: #2c5281;
+    text-decoration: underline;
+}

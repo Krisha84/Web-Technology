@@ -1,0 +1,135 @@
+.book-page {
+    background: linear-gradient(135deg, #d3e0f5 0%, #e6f2fc 100%);
+    min-height: 100vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: backgroundFade 10s infinite alternate;
+}
+
+@keyframes backgroundFade {
+    0% {
+        background-color: #e3f2fd;
+    }
+    100% {
+        background-color: #bbdefb;
+    }
+}
+
+.back-button {
+    padding: 0.8rem 2rem;
+    background-color: #0e4475;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    background-color: #083b66;
+    transform: translateY(-2px);
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.book-card {
+    background-color: rgba(187, 222, 251, 0.85);
+    border: 2px solid #1976d2;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgb(202, 219, 249);
+    border: 2px solid #083b66;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #0e4475;
+    margin-bottom: 0.5rem;
+}
+
+.card-author {
+    font-size: 1rem;
+    color: #4f6f90;
+    margin-bottom: 1.5rem;
+}
+
+.custom-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: transparent;
+    color: #0e4475;
+    border: 2px solid #0e4475;
+    border-radius: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background-color: #0e4475;
+    color: white;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .book-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-author {
+        font-size: 0.9rem;
+    }
+
+    .back-button {
+        margin: 20px;
+    }
+}

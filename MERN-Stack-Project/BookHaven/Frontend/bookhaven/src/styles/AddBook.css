@@ -1,0 +1,44 @@
+.back-button {
+    padding: 0.8rem 2rem;
+    background-color: #0e4475;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #0e4475; 
+}
+
+.container {
+    background-color: #c8dfff;
+    min-height: 80vh;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.form-control {
+    border: 1px solid #0e4475;
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.form-control::placeholder {
+    color: #b0b0b0;
+}
+
+.form-label {
+    color: #ffffff;
+}
+
+.btn-success {
+    background-color: #0e4475;
+    border: none;
+    transition: background-color 0.3s ease;
+}
