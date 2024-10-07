@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=10;
+        console.log("A Outside : "+a);
+        abc();
+
+        function abc(){
+            var a=20;
+            console.log("A Inside Function : "+a);
+
+            if(true){
+                let a=30;
+                console.log("A Inside Block : "+a);
+            }
+        }
+
+        b=11;
+        console.log("B Outside : "+b);
+        xyz();
+
+        function xyz(){
+            var b=22;
+            if(true){
+                b=33;
+                console.log("B Inside Block : "+b);
+            }
+            console.log("B Inside Function : "+b);     
+        }
+
+        k=11;
+        console.log("K Outside : "+k);
+        xyz();
+
+        function xyz(){
+            k=22;
+            if(true){
+                let k=33;
+                console.log("K Inside Block : "+k);
+            }
+            console.log("K Inside Function : "+k);     
+        }
+
+        const i = {
+            name : 'Krisha',
+            age : 18
+        }
+        i.name = 'Busa';
+        console.log(i);
+
+        //It will make error
+        // const x=4; _ _ _ _ print thase
+        // console.log(x);
+
+        // x=5; _ _ _ _ error
+        // console.log(x);
+
+    </script>
+</body>
+</html>
