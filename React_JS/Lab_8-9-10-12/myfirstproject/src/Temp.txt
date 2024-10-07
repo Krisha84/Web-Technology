@@ -1,0 +1,147 @@
+1)
+// import Header from './Header';
+// import Footer from './Footer';
+// import Separator from './Separator';
+// import Welcome from './Welcome';
+// import Display from './Display';
+
+// function HelloWorld(){
+//   return(
+//     <>
+//       <h1>Hello World !!</h1>
+//     </>
+//   );
+// }
+
+// class Class extends React.Component{
+//   render(){
+//     return(
+//       <h1>--------</h1>
+//     );
+//   }
+// }
+
+// root.render(
+//   <>
+//     <Header/>
+//     <Class/>
+//     <Welcome/>
+//     <HelloWorld/>
+//     <Separator count="3" by="^_^ || "/>
+//     <Display/>
+//     <Footer/>
+//   </>
+// );
+
+
+
+2) 
+
+// import Layout from './Layout';
+// import Home from './Home';
+// import About from './About';
+// import Services from './Services';
+// import Contact from './Contact';
+// import FAQ from './FAQ';
+
+// root.render(
+//   <BrowserRouter>
+//     <Routes>
+//       <Route path='/' element={ <Layout /> }>
+//         <Route index element={ <Home /> }></Route>
+//         <Route path="about" element={ <About /> }></Route>
+//         <Route path="services" element={ <Services /> }></Route>
+//         <Route path="contact" element={ <Contact /> }></Route>
+//         <Route path="faq" element={ <FAQ /> }></Route>
+//       </Route>
+//     </Routes>
+//   </BrowserRouter>
+// );
+
+
+3)
+// function Hello(){
+//   const [count, setCount] = useState(0);
+//   useEffect(() => {
+//   }, [count])
+
+//   return(
+//     <>
+//       <h1>Count:{count}</h1>
+//       <button onClick={() => {
+//         setCount(count + 1)
+//         console.log(count);
+//       }}>Add</button>
+//     </>
+//   )
+// }
+
+// root.render(
+//   <Hello />
+// );
+
+4)
+// function GetAll(){
+//     const [data, setData] = useState([])
+
+//     useEffect(() => {
+//         fetch("https://66f0d6def2a8bce81be6c0df.mockapi.io/student")
+//             .then(res => res.json())
+//             .then(res => setData(res))
+//     }, []);
+
+//     var formattedData = data.map((stu) => {
+//         return(
+//             <>
+//                 <div className="card" style={{ width: "21Brem" }}>
+//                     <div className="card-body">
+//                         <img src={stu.avatar} style={{width: "333px"}}/>
+//                         <h5 className="card-title">{ stu.name }</h5>
+//                         <p className="card-text">{ stu.eamil }</p>
+//                     </div>
+//                 </div>
+//             </>
+//         )
+//     })
+
+//     return(
+//         <>
+//             { formattedData }
+//         </>
+//     )
+// }
+
+// function GetById(){
+//     const [stu, setStudent] = useState([])
+
+//     const params = useParams();
+
+//     useEffect(() => {
+//         let apiURL = "https://66f0d6def2a8bce81be6c0df.mockapi.io/student/"+params.id;
+//         fetch(apiURL)
+//         .then(res => res.json())
+//         .then(res => setStudent(res))
+//     }, []);
+
+    
+//         return(
+//             <>
+//                 <div className="card" style={{ width: "21Brem" }}>
+//                     <div className="card-body">
+//                         <img src={stu.avatar} style={{width: "333px"}}/>
+//                         <h5 className="card-title">{ stu.name }</h5>
+//                         <p className="card-text">{ stu.eamil }</p>
+//                     </div>
+//                 </div>
+//             </>
+//         )
+// }
+
+// root.render(
+//     <BrowserRouter>
+//         <Routes>
+//             <Route path='/students' element={ <GetAll /> } />
+//             <Route path='/students/:id' element={ <GetById /> } />
+//         </Routes>
+//     </BrowserRouter>
+// )
